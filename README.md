@@ -147,7 +147,8 @@ Espero este ejercicio haya sido de gran utilidad, al igual que todos los lectore
 <h1 align="center"> ¡NOS VEMOS A LA PRÓXIMA!
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"> </h1>
 <ing src="https://github.com/Danielakato/codelAB_bi/commit/bf2b7c96d2894da5f193319745e47c9c651201ea">  
-![image](https://github.com/user-attachments/assets/cf5bf8f6-6d02-4d3d-9793-69661c527a9d)
+
+  ![image](https://github.com/user-attachments/assets/cf5bf8f6-6d02-4d3d-9793-69661c527a9d)
 
 # Autores
 Natalia Andrea Pinzón Vásquez

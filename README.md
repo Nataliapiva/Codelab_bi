@@ -1,10 +1,6 @@
 # Codelab_bi
 
 
-<p align="center">
-  <img src="https://github.com/Danielakato/codelAB_bi/blob/9005d2e9f06882bcac92256e915831b3c536be56/portada%20Daniela%20Kayerr.png" height= "230"/>
-</p>
-
 <div align "center">
 <h1 align="center"> Hola, soy Natalia Andrea Pinzón Vásquez 
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"> </h1>

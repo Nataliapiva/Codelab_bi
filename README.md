@@ -22,7 +22,8 @@
 - [Generar y Guardar Datos de Sucursales](#Generar-y-Guardar-Datos-de-Sucursales)
 - [Generar y Guardar Tabla de Transacciones](#Generar-y-Guardar-Tabla-de-Transacciones)
 - [Generar y Guardar Tabla de Tipo de Transacciones](#Generar-y-Guardar-Tabla-de-Tipo-de-Transacciones)
-- [Verificar la Creación de Tablas y cierre de la Conexión](#Verificar-la-Creación-de-Tablas)
+- [Verificar la Creación de Tablas en SQLite3](#Verificar-la-Creación-de-Tablas)
+- [Explicación de Gráficas](#Explicacion-de-graficas)
 - [Cierre](#Cierre)
 - [Autor(es)](#Autores)
 
@@ -49,15 +50,15 @@ Posterior a eso, se importaron las siguiente librerías con el código 'import':
 
 7. shutil: Se utiliza para copiar y mover archivos.
 
-Una vez realizadas todas las importaciones de las liberías y herramientas, continuamos con la importación de drive con el siguiente comando: 
+8. missingno as msno: Se utiliza para visualizar y analizar datos faltantes.
 
-'from google.colab import drive' --> este comando permite la interacción entre google colab y drive, para la creación y acceso a archivos almacenados.
+Una vez realizadas todas las importaciones de las liberías y herramientas, se monta en Google Drive con el comando 'drive.mount('/content/drive'), de tal forma que el script pueda leer o guardar archivos directamente desde allí.
 
-Posterior a esto, se monta en Google Drive con el comando 'drive.mount('/content/drive'), de tal forma que el script pueda leer o guardar archivos directamente desde allí.
+Continuamos con incluir la ruta al archivo db con la ruta a google drive, y luego conectar a la base de datos.
 
 Lo anterior se ve así, 
 
-![image](https://github.com/user-attachments/assets/e504de78-11e6-433b-9f41-79d3966f3947)
+![image](https://github.com/user-attachments/assets/ed7cf770-7852-41b9-9d58-44a95080a717)
 
 
 # Creación base de datos
@@ -129,16 +130,33 @@ Posterior a eso, se asigna branch_id para aquellas transacciones en la tienda "i
 Lo anterior se puede ver en el siguiente código:
 ![image](https://github.com/user-attachments/assets/e76f9bba-bd0d-41f6-b132-8e304140af76)
 
-# Verificar la Creación de Tablas
+# Verificar la Creación de Tablas en SQLitte3
 
 En este apartado o chunk, se busca verificar que las tablas generadas anteriormente en el código, se hayan generado y cerrado de manera correcta, a través del siguiente código:
 
 ![image](https://github.com/user-attachments/assets/55cbd61b-4078-43ca-a7cd-33879ccc9527)
 
+Dentro de la verificación de la creación de tablas se enlista las tablas existentes e imprime los resultados, consultando SQL SELECT name FROM squlite_master WHERE type_'table' y ejecutándola con el código pd.read_sql() y almacenando todas las tablas con el código DataFrame (tables).
+
 Por último, y recordando que al inicio del ejercicio fue creado un archivo desde Drive con el nombre de 'financial_data.db', se debe comandar el almacenamiento de nuestro trabajo en dicho archivo de Google Drive, para luego copiar el archivo de la base de datos a Google Drive.
 
 Lo anterior, se puede observar a continuación:
 ![image](https://github.com/user-attachments/assets/a73126fe-6321-41c1-a7f0-29576332cb29)
+
+# Explicación de Gráficas
+A continuación se presentan las tablas generadas y demás estadísticas descriptivas que ofrecen información útil sobre la completitud de los datos, realizando un conteo en el primer gráfico de registros por columna en la tabla de transacciones y conteo de los valores no nulos en las segunda gráfica, gracias a la librería missingno. Ambos gráficos presentados a continuación presentan un comportamiento similar donde cada barra cuenta con la misma cantidad de registros, lo que nos permite verificar la completitud de los datos en cada transacción.
+
+![image](https://github.com/user-attachments/assets/43adaf46-22a8-48d9-a126-291e467adaec)
+![image](https://github.com/user-attachments/assets/2d318fba-45d5-4358-a003-676bcd59386b)
+
+**Matriz de estadísticas descriptivas
+![image](https://github.com/user-attachments/assets/8409916a-e0c8-4559-be3d-2733f99e992d)
+A partir de esta matriz podemos identificar una mayor concentración de los datos transaccionales evidenciados con un color rojo, el cual indica su gran cantidad con respecto al conjunto de datos fraudulentos.
+
+**Distribución de la variable de datos transaccionales
+Por último presentamos el gráfico de distribución de datos de transaction_amount, donde podemos evidenciar un comportamiento interesante en la frecuencia de los datos entre el rango 0-100, mientras que los datos disminuyen a medida que los datos de transacción más bajos cuentan con una menor frecuencia.
+![image](https://github.com/user-attachments/assets/e0c5ee7d-7818-4cfa-bde6-405eb975b330)
+
 
 # Cierre
 Espero este ejercicio haya sido de gran utilidad, al igual que todos los lectores, hayan podido comprender un poco más sobre el lenguaje de programación de Python y SQLite3.
